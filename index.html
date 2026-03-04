@@ -104,6 +104,51 @@
         <div class="kpi"><div class="muted">Classificação</div><div class="value" id="classification">Inexistente</div></div>
       </div>
     </section>
+
+    <section class="card">
+      <h2>FAQ – Controle 5.17 (Authentication Information)</h2>
+
+      <p><strong>1) O que exatamente está sendo medido neste módulo?</strong><br>
+      O módulo mede <strong>maturidade de governança e execução</strong> relacionada à proteção de credenciais e autenticação, avaliando se a organização possui práticas consistentes, rastreáveis e proporcionais ao risco para gestão de credenciais, uso de MFA e monitoramento de autenticação.</p>
+
+      <p><strong>2) Por que “maturidade” é diferente de “ter MFA ligado”?</strong><br>
+      MFA é um mecanismo. Maturidade inclui:</p>
+      <ul>
+        <li>política e critérios por criticidade,</li>
+        <li>processos de reset e exceções controladas,</li>
+        <li>cobertura consistente em sistemas críticos,</li>
+        <li>evidências e rastreabilidade,</li>
+        <li>monitoramento e resposta a anomalias.</li>
+      </ul>
+      <p>Ou seja, maturidade considera o controle como um <strong>sistema de gestão</strong>, não um item isolado.</p>
+
+      <p><strong>3) Como lidar com contas técnicas/serviço sem expor credenciais?</strong><br>
+      O ponto central é reduzir a dependência de credenciais estáticas e tornar o uso auditável:</p>
+      <ul>
+        <li>ownership formal,</li>
+        <li>armazenamento seguro de segredos,</li>
+        <li>rotação quando aplicável,</li>
+        <li>segregação e escopo mínimo,</li>
+        <li>logging e trilha de auditoria do uso.</li>
+      </ul>
+      <p>O objetivo é manter continuidade operacional sem perder governança e rastreabilidade.</p>
+
+      <p><strong>4) Qual a diferença prática entre Nível 3 (Padronizado) e Nível 4 (Automatizado)?</strong></p>
+      <ul>
+        <li><strong>Nível 3</strong>: processos são consistentes e replicáveis, porém podem depender de execução manual e controles por amostragem.</li>
+        <li><strong>Nível 4</strong>: controles passam a ser aplicados/validados por ferramentas e fluxos (ex.: enforcement de MFA, políticas centralizadas, evidências geradas automaticamente), reduzindo variabilidade e aumentando confiabilidade.</li>
+      </ul>
+
+      <p><strong>5) Como este controle se conecta a governança e auditoria?</strong><br>
+      A proteção de credenciais impacta diretamente:</p>
+      <ul>
+        <li>rastreabilidade (accountability) e trilha de auditoria,</li>
+        <li>segregação de funções e responsabilidade individual,</li>
+        <li>eficácia de controles de acesso,</li>
+        <li>evidências de conformidade.</li>
+      </ul>
+      <p>Em termos de auditoria, credenciais fracas ou compartilhadas reduzem a confiança na atribuição de ações a indivíduos e aumentam risco operacional e regulatório.</p>
+    </section>
   </main>
 
   <script>
