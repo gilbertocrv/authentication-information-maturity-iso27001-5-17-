@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Controle 5.17 - Authentication Information</title>
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #1d4ed8;
+      --border: #e5e7eb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 24px;
+    }
+    .container { max-width: 1000px; margin: 0 auto; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    }
+    h1, h2 { margin: 0 0 12px; }
+    p { margin: 8px 0; }
+    .muted { color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    th, td { border-bottom: 1px solid var(--border); padding: 10px; text-align: left; vertical-align: top; }
+    th { font-size: .95rem; }
+    .group-title { color: var(--primary); font-weight: 700; margin-top: 10px; }
+    select {
+      width: 70px;
+      padding: 6px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: #fff;
+    }
+    .result {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .kpi {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      background: #fafafa;
+    }
+    .value { font-size: 1.5rem; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <h1>Controle 5.17 – Authentication Information (ISO/IEC 27001:2022)</h1>
+      <p>Este formulário avalia o nível de maturidade de práticas relacionadas à proteção de credenciais, autenticação e monitoramento.</p>
+      <p class="muted">Escala: 0 (Inexistente) a 5 (Baseado em Risco).</p>
+    </section>
+
+    <section class="card">
+      <h2>Deep Dive de Maturidade</h2>
+      <form id="assessment-form">
+        <p class="group-title">1) Gestão de Credenciais</p>
+        <table>
+          <tr><th>Critério</th><th>Pontuação</th></tr>
+          <tr><td>Política e padrões mínimos de credenciais</td><td><select data-group="credenciais"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+          <tr><td>Processo de criação/alteração/reset com validação adequada</td><td><select data-group="credenciais"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+          <tr><td>Tratamento de contas genéricas e credenciais de serviço</td><td><select data-group="credenciais"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+          <tr><td>Armazenamento e manuseio de segredos (vault, variáveis seguras, etc.)</td><td><select data-group="credenciais"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+        </table>
+
+        <p class="group-title">2) Autenticação e MFA</p>
+        <table>
+          <tr><th>Critério</th><th>Pontuação</th></tr>
+          <tr><td>Aplicação de MFA para acessos críticos e privilegiados</td><td><select data-group="mfa"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+          <tr><td>Padronização da autenticação por criticidade</td><td><select data-group="mfa"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+          <tr><td>Requisitos para acesso remoto e ambientes sensíveis</td><td><select data-group="mfa"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+          <tr><td>Resistência a brute force, credential stuffing e MFA fatigue</td><td><select data-group="mfa"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+        </table>
+
+        <p class="group-title">3) Proteção e Monitoramento</p>
+        <table>
+          <tr><th>Critério</th><th>Pontuação</th></tr>
+          <tr><td>Proteção criptográfica de credenciais e segredos</td><td><select data-group="monitoramento"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+          <tr><td>Bloqueio, rate limiting e detecção de tentativas anômalas</td><td><select data-group="monitoramento"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+          <tr><td>Logs e trilhas de auditoria sobre autenticação</td><td><select data-group="monitoramento"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+          <tr><td>Indicadores operacionais de governança</td><td><select data-group="monitoramento"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+        </table>
+      </form>
+
+      <div class="result">
+        <div class="kpi"><div class="muted">Média Geral</div><div class="value" id="overall">0.00</div></div>
+        <div class="kpi"><div class="muted">Classificação</div><div class="value" id="classification">Inexistente</div></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const selects = Array.from(document.querySelectorAll('select'));
+    const overall = document.getElementById('overall');
+    const classification = document.getElementById('classification');
+
+    function classify(score) {
+      if (score < 0.5) return '0 – Inexistente';
+      if (score < 1.5) return '1 – Ad-hoc';
+      if (score < 2.5) return '2 – Documentado';
+      if (score < 3.5) return '3 – Padronizado';
+      if (score < 4.5) return '4 – Automatizado';
+      return '5 – Baseado em Risco';
+    }
+
+    function recalc() {
+      const values = selects.map((s) => Number(s.value));
+      const avg = values.reduce((sum, n) => sum + n, 0) / values.length;
+      overall.textContent = avg.toFixed(2);
+      classification.textContent = classify(avg);
+    }
+
+    selects.forEach((s) => s.addEventListener('change', recalc));
+    recalc();
+  </script>
+</body>
+</html>
